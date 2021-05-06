@@ -1,0 +1,11 @@
+mkdir ~/elf2encryptedhex/output
+export RISCV_PATH=~/riscv-new/_install 
+# Your riscv-gnu-toolchain-installorbuild-path
+export PATH=$PATH:$RISCV_PATH/bin
+
+$RISCV_PATH/bin/clang$([[ $1 == *.c ]] && echo "" || echo "++") -c --target=riscv${2}-unknown-elf $1 -o ~/elf2encryptedhex/output/${1%.*}.o 
+# I am using clang, you can use gcc or g++ and its options change it yourself.
+
+~/elf2encryptedhex/utils/elf2hex --bit-width ${2} --input ~/elf2encryptedhex/output/${1%.*}.o --output ~/elf2encryptedhex/output/${1%.*}.hex
+
+~/elf2encryptedhex/utils/hex2encryptedhex ~/elf2encryptedhex/output/${1%.*} ${2} ${3} ${4} ${5}
