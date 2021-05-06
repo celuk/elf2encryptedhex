@@ -1,4 +1,5 @@
 #!/bin/bash
+# Actual source: https://github.com/sifive/freedom-elf2hex
 
 unset bit_width
 unset input
