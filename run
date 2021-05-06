@@ -1,3 +1,4 @@
+# You should download this repo to /home/your-name or change directories.
 mkdir ~/elf2encryptedhex/output
 export RISCV_PATH=~/riscv-new/_install 
 # Your riscv-gnu-toolchain-installorbuild-path
