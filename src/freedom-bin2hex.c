@@ -1,3 +1,4 @@
+// Actual source: https://github.com/sifive/freedom-elf2hex
 /*
  * freedom-bin2hex.c
  *
